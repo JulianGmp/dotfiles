@@ -1,0 +1,20 @@
+#!/bin/sh
+
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+status=$(cat /sys/class/power_supply/BAT0/status)
+prog=$(charprog braille "$capacity")
+
+case $(echo "$status" | tr '[:upper:]' '[:lower:]') in
+	"full")
+		symbol="🔌" ;;
+	"discharging")
+		symbol="🔋" ;;
+	"charging")
+		symbol="⚡" ;;
+	*)
+		symbol=" ($status)" ;;
+esac
+
+printf '%s' "${symbol} ${prog} ${capacity} %"
+
+

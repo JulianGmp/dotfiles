@@ -1,0 +1,32 @@
+#!/bin/sh
+# Alias file
+
+### Colouring
+alias \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	# ls="ls -hN --color=auto --group-directories-first"
+
+
+### Custom exa aliases (ls replacement)
+alias \
+	l="exa -b --icons --time-style=long-iso --group-directories-first" \
+	ll="l -hl --git" \
+	la="l -hla --git"\
+	lt="l -hlT --git"
+
+### Safety
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -Iv"
+
+
+### Random stuff
+
+# nvim ftw
+alias v="nvim"
+alias vim="nvim"
+
+# Ensuring ssh works in Alacritty
+alias ssh="TERM='xterm' ssh"

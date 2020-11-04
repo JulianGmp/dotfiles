@@ -1,0 +1,7 @@
+#!/bin/sh
+
+printf '%s' \
+	"$(date +"%A %Y-%m-%d %H:%M")" " — " \
+	"$(batteryinfo)" " — " \
+	"Zoomer-Shell v$(zsh --version | cut -d " " -f 2)" " — " \
+	"$(uname) " "v$(uname -r | cut -d "." -f 1,2)"

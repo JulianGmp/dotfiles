@@ -1,0 +1,19 @@
+# my zsh functions
+# (when an alias just can't do it)
+
+# Search man for POSIX only commands
+mansp () {
+	if [ -z "$1" ] ; then
+		echo "No argument given."
+		return
+	fi
+	man -k "$1" | grep -E "\([0-9]+p\)" | sort -k 2 | grep "$1"
+}
+
+# Fix cursor, executed every prompt
+_fix_cursor() {
+	echo -ne "\e[5 q"
+}
+
+precmd_functions+=(_fix_cursor)
+

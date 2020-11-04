@@ -1,0 +1,21 @@
+scrolling:
+  history: 1000
+
+font:
+  size: 11
+  normal:
+    family: FiraMono Nerd Font
+  bold:
+    family: FiraMono Nerd Font
+  italic:
+    family: FiraMono Nerd Font
+
+background_opacity: 0.87
+
+colors:
+  primary:
+    background: '0x282828'
+
+cursor:
+  style: Beam
+
