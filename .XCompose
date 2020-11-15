@@ -1,0 +1,8 @@
+# .XCompose
+
+include "%L"
+
+<dead_circumflex> <dead_circumflex> : "^^"
+<dead_grave> <dead_grave> : "``"
+<dead_acute> <dead_acute> : "´´"
+
