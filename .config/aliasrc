@@ -11,6 +11,7 @@ alias \
 ### Custom exa aliases (ls replacement)
 alias \
 	l="exa -b --icons --time-style=long-iso --group-directories-first" \
+	ls="l -h" \
 	ll="l -hl --git" \
 	la="l -hla --git"\
 	lt="l -hlT --git"
