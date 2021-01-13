@@ -26,6 +26,9 @@ _source_if_available() {
 	[ -f "$1" ] && source "$1"
 }
 
+# Sourcing .env to update environment variables. A bit of a hack but hey as long as it works.
+_source_if_available "$HOME/.env"
+
 _source_if_available "$XDG_CONFIG_HOME/aliasrc"
 _source_if_available "$ZDOTDIR/.zshfunctions"
 _source_if_available "/usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme"
