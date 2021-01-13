@@ -7,7 +7,7 @@ shell_motd && echo ""
 
 autoload -U colors && colors
 
-PS1='%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%2~ %{$reset_color%}$%b '
+PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%2~ %{$reset_color%}$%b "
 
 # Luke's prompt
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
