@@ -1,7 +1,0 @@
-#!/bin/sh
-# Interactively Add SSH keys (agent must be running)
-
-ssh_key_list=$(ssh-add -l) 2> /dev/null
-if $? && [ "$(echo "$ssh_key_list" | wc -l)" -eq 0 ]; then
-	ssh-add "$HOME/.ssh/id_rsa"
-fi
