@@ -6,20 +6,42 @@ shell_motd && echo ""
 
 
 autoload -U colors && colors
+autoload -Uz vcs_info
 
-PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%2~ %{$reset_color%}$%b "
+# ***** Setting up prompt
 
-# Luke's prompt
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%2~ %{$reset_color%}$%b "
 
-autoload -U compinit
-zstyle ':completion:*' menu select
+# Add fancy git prompt
+# https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+last_err_fancy() {
+	exitcode="$?"
+	if [ "$exitcode" -eq 0 ] ; then
+		# printf "✔️"
+	else
+		printf "❌$exitcode"
+	fi
+}
+RPROMPT="\$vcs_info_msg_0_%{$fg[red]%}\$(last_err_fancy)%{$reset_color%}"
+zstyle ':vcs_info:git:*' formats "%{$fg[yellow]%} %b%{$reset_color%} "
+
+# ***** Setting up auto complete
+
+autoload -Uz compinit
 zmodload zsh/complist
+zstyle ':completion:*' menu select
+# https://stackoverflow.com/a/24237590
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[.,_-]=* r:|=*' 'l:|=* r:|=*'
 compinit
 
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 
+
+# ***** Sourcing other files
 
 # Function to source a script, if it exists
 _source_if_available() {
@@ -41,7 +63,7 @@ HISTFILE="$XDG_CACHE_HOME/zshhistory"
 HISTSIZE=1500
 SAVEHIST=1500
 
-# Key bindings
+# ***** Key bindings
 # Enable "delete" key
 bindkey "\e[3~" delete-char
 # Enable Ctrl+left/right
@@ -54,5 +76,11 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3;5~" kill-word
 bindkey "^H" backward-kill-word
 
-# Add SSH ids to the agent if necessary
-ssh_agent_add_id
+# TODO:
+# https://unix.stackexchange.com/questions/258656/how-can-i-have-two-keystrokes-to-delete-to-either-a-slash-or-a-word-in-zsh
+# https://unix.stackexchange.com/questions/313806/zsh-make-altbackspace-stop-at-non-alphanumeric-characters
+
+# **** SSH Keys
+# Using keychain to manage ssh keys
+# because ssh-agent is anoying
+eval $(keychain -q --agents ssh --eval "$HOME/.ssh/id_rsa")

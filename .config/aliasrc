@@ -26,6 +26,7 @@ alias \
 ### Random stuff
 
 # nvim ftw
+alias e="kak"
 alias v="nvim"
 alias vim="nvim"
 
@@ -35,3 +36,5 @@ alias ssh="TERM='xterm' ssh"
 # Bare git repo to manage dotfiles
 # see https://www.atlassian.com/git/tutorials/dotfiles
 alias dotgit='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
+
+
