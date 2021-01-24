@@ -1,5 +1,6 @@
 configuration {
 	lines: 30;
 	// theme: "material";
-	// font: "monospace 20";
+	font: "TerminalMono 13";
 }
+

@@ -5,12 +5,15 @@
 shell_motd && echo ""
 
 
+# ***** Setting up prompt
+
+# Add fancy git prompt
+# https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
+
 autoload -U colors && colors
 autoload -Uz vcs_info
 
-# ***** Setting up prompt
-
-PROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%2~ %{$reset_color%}$%b "
+PROMPT="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%4~ %{$reset_color%}>%b "
 
 # Add fancy git prompt
 # https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
@@ -26,6 +29,7 @@ last_err_fancy() {
 	fi
 }
 RPROMPT="\$vcs_info_msg_0_%{$fg[red]%}\$(last_err_fancy)%{$reset_color%}"
+ZLE_RPROMPT_INDENT="0"
 zstyle ':vcs_info:git:*' formats "%{$fg[yellow]%} %b%{$reset_color%} "
 
 # ***** Setting up auto complete
