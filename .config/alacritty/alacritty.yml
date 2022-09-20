@@ -4,13 +4,14 @@ scrolling:
 font:
   size: 10
   normal:
-    family: FiraCode Nerd Font
+    family: 'FiraCode Nerd Font'
   bold:
-    family: FiraCode Nerd Font
+    family: 'FiraCode Nerd Font'
   italic:
-    family: FiraCode Nerd Font
+    family: 'FiraCode Nerd Font'
 
-background_opacity: 0.87
+window:
+    opacity: 0.87
 
 colors:
   primary:
@@ -18,4 +19,3 @@ colors:
 
 cursor:
   style: Beam
-

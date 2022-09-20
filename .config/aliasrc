@@ -1,40 +1,29 @@
-#!/bin/sh
 # Alias file
 
-### Colouring
-alias \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	# ls="ls -hN --color=auto --group-directories-first"
+### Colors!
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
 
+### Using exa instead of ls because it's cool and all
+alias l='exa -hb --icons --time-style=long-iso --group-directories-first'
+alias ls='l'
+alias ll='l -l --git'
+alias la='l -la --git'
+alias lt='l -lT --git'
 
-### Custom exa aliases (ls replacement)
-alias \
-	l="exa -b --icons --time-style=long-iso --group-directories-first" \
-	ls="l -h" \
-	ll="l -hl --git" \
-	la="l -hla --git"\
-	lt="l -hlT --git"
+### Making some core tools a bit more idiot proof
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
 
-### Safety
-alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -Iv"
-
-
-### Random stuff
-
-# nvim ftw
-alias e="kak"
-alias v="nvim"
-alias vim="nvim"
-
-# Ensuring ssh works in Alacritty
-alias ssh="TERM='xterm' ssh"
+### Misc
+alias e='kak'
+# ensuring ssh works in Alacritty
+alias ssh='TERM="xterm" ssh'
+# Use VSCode's regular binary name for the open source release as well
+alias code='code-oss'
 
 # Bare git repo to manage dotfiles
 # see https://www.atlassian.com/git/tutorials/dotfiles
 alias dotgit='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
-
 

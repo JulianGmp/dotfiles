@@ -1,7 +1,8 @@
 {
-	// Visuals
-	"editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-	"editor.fontSize": 18,
+    // Visuals
+	"editor.fontFamily": "'FiraCode Nerd Font', monospace",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 16,
 	"editor.renderWhitespace": "boundary",
 	"editor.mouseWheelZoom": true,
 	"editor.detectIndentation": false,
@@ -10,14 +11,15 @@
 	"editor.fontLigatures": true,
 	"editor.showFoldingControls": "always",
 	"editor.wordWrap": "on",
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.colorTheme": "[JG] Dark+",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
+    "workbench.colorTheme": "Nord",
 	"editor.minimap.enabled": false,
 	
 	// Terminal
 	"terminal.integrated.cursorStyle": "line",
 	"terminal.integrated.cursorBlinking": true,
-	"terminal.integrated.fontFamily": "FiraMono Nerd Font",
+	"terminal.integrated.fontFamily": "'FiraCode Nerd Font', monospace",
 	
 	// Misc
 	"workbench.settings.useSplitJSON": true,
@@ -71,5 +73,4 @@
 		"aliasrc": "shellscript",
 		".env": "shellscript"
 	},
-
 }
