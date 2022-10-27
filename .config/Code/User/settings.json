@@ -1,0 +1,157 @@
+{
+	// General settings
+	"update.mode": "none", // do not recieve auto updates, let the OS handle updates
+	"telemetry.telemetryLevel": "off",
+
+	// Visuals
+	"window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${appName}",
+	"window.zoomLevel": 1,
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorTheme": "JetBrains Darcula Theme",
+	"workbench.productIconTheme": "fluent-icons",
+	"workbench.sideBar.location": "right",
+	"editor.renderWhitespace": "boundary",
+	"editor.fontLigatures": true,
+	"editor.minimap.enabled": false,
+	"editor.bracketPairColorization.enabled": false,
+	"zenMode.hideActivityBar": false,
+	"zenMode.hideLineNumbers": false,
+	"zenMode.hideStatusBar": false,
+	"zenMode.hideTabs": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	// tab UI
+	"workbench.editor.wrapTabs":true,
+	"workbench.editor.tabSizing": "shrink",
+	"workbench.editor.decorations.colors": true,
+	"workbench.editor.decorations.badges": true,
+	"workbench.editor.tabCloseButton": "off",
+	// fonts
+	"editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Sogoe UI Emoji', monospace",
+	"editor.fontSize": 15,
+	"terminal.integrated.fontFamily": "'FiraCode Nerd Font', 'Consolas'",
+
+	// Editor behaviour
+	"editor.mouseWheelZoom": true,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.showFoldingControls": "always",
+	"editor.wordWrap": "on",
+	"editor.guides.bracketPairs": "active",
+	"workbench.editor.languageDetection": false,
+	
+	// Terminal behavior
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.showExitAlert": false,
+	"terminal.integrated.fontSize": 16,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"terminal.external.linuxExec": "alacritty",
+	
+	// Misc behavior
+	"editor.quickSuggestions": {
+		"other": "on",
+		"comments": "off",
+		"strings": "off"
+	},
+	"workbench.settings.useSplitJSON": true,
+	"editor.suggestSelection": "first",
+	"explorer.autoReveal": false,
+	"files.exclude": {
+		"**/.git": false,
+		"**/.svn": false,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**.c_cpp_properties.json": false,
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"extensions.autoUpdate": false,
+	"debug.openDebug": "openOnDebugBreak",
+	"extensions.ignoreRecommendations": true,
+	"keyboard.dispatch": "keyCode",
+	"files.insertFinalNewline": true,
+
+	// Error Lens extension
+	// we set enabled to false and then only enable the ones we want
+	"errorLens.enabled": false,
+	"errorLens.enabledDiagnosticLevels": [
+		"warning",
+		"info",
+		"hint"
+	],
+	"errorLens.severityText": [
+		"❌ ",
+		"⚠ ",
+		"ℹ ",
+		""
+	],
+	
+	// Language specific overwrites
+	"[go]": {
+		"editor.formatOnSave": false,
+	},
+	"go.formatTool": "goimports",
+	"[rust]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4,
+		"editor.renderWhitespace": "selection",
+		"editor.rulers": [100]
+	},
+	"[yaml]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		}
+	},
+	"[c]": {
+		"editor.rulers": [100]
+	},
+	"[csv]": {
+		"editor.wordWrap": "off"
+	},
+	"[python]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4,
+	},
+	"[cmake]": {
+		"editor.detectIndentation": true,
+	},
+
+	// additional file associations
+	"files.associations": {
+		"aliasrc": "shellscript",
+		".env": "shellscript",
+		".clang-format": "yaml",
+		".clang-tidy": "yaml",
+	},
+
+
+	// GitLens extension
+	"gitlens.codeLens.scopes": [
+		"document",
+		"containers",
+		"blocks"
+	],
+	"gitlens.views.commits.files.layout": "tree",
+	"gitlens.changes.locations": [
+		"gutter",
+		"overview"
+	],
+	"gitlens.defaultDateFormat": "YYYY-MM-DD hh:mm:ss",
+	"gitlens.defaultTimeFormat": "hh:mm:ss",
+	"gitlens.defaultDateShortFormat": "YYYY-MM-DD",
+	"gitlens.plusFeatures.enabled": false,
+
+	// Qalc extension
+	"qalc.enabledLanguages": [ "qalc" ],
+	"qalc.currency.localCode": "EUR",
+	"qalc.currency.localSymbol": "€",
+	"qalc.output.notation": "engineering",
+}
