@@ -20,8 +20,10 @@ alias rm='rm -Iv'
 alias e='kak'
 # ensuring ssh works in Alacritty
 alias ssh='TERM="xterm" ssh'
-# Use VSCode's regular binary name for the open source release as well
-alias code='code-oss'
+# Use VSCode's regular binary name for the open source release if 'code' is not on path but 'code-oss' is
+if ! which code 2>&1 > /dev/null && which code-oss 2>&1 > /dev/null ; then
+	alias code='code-oss'
+fi
 
 # Bare git repo to manage dotfiles
 # see https://www.atlassian.com/git/tutorials/dotfiles
